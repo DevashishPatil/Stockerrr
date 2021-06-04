@@ -45,7 +45,7 @@ app.get('/', async(req ,res) => {
             }
         })
 
-        res.json(tableArr)
+        res.send(tableArr)
 
     } catch (error) {
         console.error(error)
