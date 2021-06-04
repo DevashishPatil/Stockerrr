@@ -1,7 +1,6 @@
 var express = require('express');
 var axios = require('axios');
 var cheerio = require('cheerio');
-let port = process.env.PORT;
 
 
 var app = express();
@@ -54,6 +53,6 @@ app.get('/', async(req ,res) => {
     }
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 80, () => {
     console.log("App running")
 });
