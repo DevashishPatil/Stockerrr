@@ -8,11 +8,11 @@ const app = express();
 
 var result = {};
 
-app.get('/', (req ,res) => {
+app.get('/', async(req ,res) => {
     try {
         const siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021"
 
-        const { data } = axios({
+        const { data } = await axios({
             method: "GET",
             url: siteURL,
         })
@@ -44,8 +44,8 @@ app.get('/', (req ,res) => {
                 tableArr.push(tableData)
             }
         })
-        
-        res.json(tableArr)
+
+        return res.json(tableArr)
 
     } catch (error) {
         console.error(error)
