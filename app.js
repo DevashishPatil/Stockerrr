@@ -8,10 +8,9 @@ const app = express();
 
 var result = {};
 
-app.get('/bonus/:year', async (req ,res) => {
+app.get('/bonus', async (req ,res) => {
     try {
-        var bonusYear = req.params.year
-        const siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year="+bonusYear
+        const siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021"
 
         const { data } = await axios({
             method: "GET",
