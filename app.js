@@ -9,7 +9,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.get('/', (req ,res) => {
+app.get('/bonus', (req ,res) => {
     try {
 
         request('https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021', (error, response, html) => {
