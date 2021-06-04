@@ -7,7 +7,6 @@ let port = process.env.PORT || 3000;
 const app = express();
 
 var result = {};
-var tableArr = [];
 
 app.get('/', async (req ,res) => {
     try {
@@ -29,6 +28,8 @@ app.get('/', async (req ,res) => {
             'ExBonus_Date'
         ]
         
+        var tableArr = []
+        
         $(elmSelector).each((i, el) => {
             var tableData = {}
             var link_placements = $(el).find('a').attr('href');
@@ -44,7 +45,8 @@ app.get('/', async (req ,res) => {
             }
         })
 
-        res.send(tableArr)
+        console.log(tableArr)
+        res.json(tableArr)
 
     } catch (error) {
         console.error(error)
