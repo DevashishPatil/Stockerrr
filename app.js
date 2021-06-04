@@ -8,7 +8,7 @@ const app = express();
 
 var result = {};
 
-app.get('/bonus', async (req ,res) => {
+app.get('/', async (req ,res) => {
     try {
         const siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021"
 
@@ -51,4 +51,6 @@ app.get('/bonus', async (req ,res) => {
     }
 });
 
-app.listen(port);
+app.listen(port, () => {
+    console.log("App running")
+});
