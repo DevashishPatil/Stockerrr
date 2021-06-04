@@ -54,6 +54,6 @@ app.get('/', async(req ,res) => {
     }
 });
 
-app.listen(port, () => {
+app.listen(80, () => {
     console.log("App running")
 });
