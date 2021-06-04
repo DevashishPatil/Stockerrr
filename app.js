@@ -45,7 +45,7 @@ app.post('/', async(req ,res) => {
             }
         })
 
-        return res.json(tableArr)
+        res.json(tableArr)
 
     } catch (error) {
         console.error(error)
