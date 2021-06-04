@@ -54,6 +54,6 @@ app.get('/', async(req ,res) => {
     }
 });
 
-app.listen(443, () => {
+app.listen(8080, () => {
     console.log("App running")
 });
