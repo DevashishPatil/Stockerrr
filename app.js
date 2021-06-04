@@ -7,6 +7,7 @@ let port = process.env.PORT || 3000;
 const app = express();
 
 var result = {};
+var tableArr = [];
 
 app.get('/', async (req ,res) => {
     try {
@@ -27,7 +28,6 @@ app.get('/', async (req ,res) => {
             'Record_Date',
             'ExBonus_Date'
         ]
-        var tableArr = []
         
         $(elmSelector).each((i, el) => {
             var tableData = {}
