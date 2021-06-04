@@ -1,7 +1,7 @@
 var express = require('express');
 var axios = require('axios');
 var cheerio = require('cheerio');
-let port = process.env.PORT || 80;
+let port = process.env.PORT;
 
 
 var app = express();
