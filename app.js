@@ -1,26 +1,28 @@
-const express = require('express');
-const axios = require('axios');
-const cheerio = require('cheerio');
+var express = require('express');
+var axios = require('axios');
+var cheerio = require('cheerio');
 let port = process.env.PORT || 3000;
 
 
-const app = express();
-
-var result = {};
+var app = express();
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 app.get('/', async(req ,res) => {
     try {
-        const siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021"
+        var siteURL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php?sel_year=2021"
 
-        const { data } = await axios({
+        var { data } = await axios({
             method: "GET",
             url: siteURL,
         })
         
-        const $ = cheerio.load(data)
-        const elmSelector = "#mc_mainWrapper > div.PA10 > div.FL > div:nth-child(12) > div.FL.PR20 > div.MT15 > table > tbody > tr"
+        var $ = cheerio.load(data)
+        var elmSelector = "#mc_mainWrapper > div.PA10 > div.FL > div:nth-child(12) > div.FL.PR20 > div.MT15 > table > tbody > tr"
 
-        const keys = [
+        var keys = [
             'Company',
             'Bonus_Ratio',
             'Announcement_Date',
